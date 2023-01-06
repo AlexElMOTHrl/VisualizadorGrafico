@@ -226,7 +226,7 @@ def AskForSineWave():
         speed = float(input("Velocidad: "))
     else: pass
 
-def SineWave(offSet: Vector2 = Vector2(-675,0), amplitude: float = 250, frecuenci: float = 2, phase: float = 0, speed: float = 1):
+def SineWave(offSet: Vector2 = Vector2(-675,0), amplitude: float = 250, _frequency: float = 2, phase: float = 0, speed: float = 1):
     
     pointer = turtle.Turtle()
     pointer.penup()
@@ -241,7 +241,7 @@ def SineWave(offSet: Vector2 = Vector2(-675,0), amplitude: float = 250, frecuenc
         tiempo += 0.01
         
         xPos = offSet.x + ((tiempo * speed) * 100)
-        yPos = offSet.y + (amplitude * math.sin(2 * math.pi * frecuenci * (tiempo * speed) + phase))
+        yPos = offSet.y + (amplitude * math.sin(2 * math.pi * _frequency * (tiempo * speed) + phase))
         AbsPos = Vector2(xPos, yPos)
         pointer.goto(AbsPos)
         
